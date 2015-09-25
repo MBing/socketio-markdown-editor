@@ -38,6 +38,7 @@ $(document).ready(function() {
     }
 
     socket.emit('options', mdOptions);
+    socket.emit('convert', padArea.val());
     return false;
   });
 
