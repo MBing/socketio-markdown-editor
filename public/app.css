@@ -1,0 +1,38 @@
+html, body {
+  height: 100%;
+}
+
+.md-options {
+  height: 30%;
+  border-bottom: 1px solid black;
+  overflow: auto;
+}
+
+.md-editor {
+  height: 70%;
+}
+
+#pad, #markdown {
+  height: 100%;
+  padding: 10px;
+}
+
+#pad{
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+  border: none;
+  border-bottom: 1px solid black;
+  overflow: auto;
+  outline: none;
+  resize: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#markdown {
+  overflow: auto;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}

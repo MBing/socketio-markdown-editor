@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Socket.io Markdown Editor</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+  </head>
+
+  <body class="container-fluid">
+    <section class="md-options row">
+      <form id="options" action="">
+        <div class="col-xs-6 col-md-4">
+          <h4>Span Extensions</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="autolink"> Autolink
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="strikethrough"> Strikethrough
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="underline"> Underline
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="highlight"> Highlight
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="quote"> Quote
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="superscript"> Superscript
+            </label>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <h4>Block Extensions</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="tables"> Tables
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="fencedCode"> Fenced Code
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="footnotes"> Footnotes
+            </label>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <h4>Flag Extensions</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="laxSpacing"> Lax Spacing
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="noIntraEmphasis"> No Intra Emphasis
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="spaceHeaders"> Space Headers
+            </label>
+          </div>
+          <h4>Negative Extensions</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="disableIndentedCode"> Disable Indented Code
+            </label>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="md-editor row">
+      <textarea class="col-xs-12 col-md-6" id="pad"></textarea>
+      <div class="col-xs-12 col-md-6" id="markdown"></div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>
