@@ -1,12 +1,10 @@
 {
   "name": "socketio-markdown-editor",
   "version": "1.0.0",
-  "description": "Markdown editor built on Node.js, Express.js and Socket.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/tangtony/socketio-markdown-editor.git"
   },
-  "author": "Tony Tang",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.3",

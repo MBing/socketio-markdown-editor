@@ -1,11 +1,19 @@
 $(document).ready(function() {
+
+  // ====================
+  // Setup
+  // ====================
+
+  // New Socket.io client
   var socket = io();
 
+  // jQuery handles
   var optionsInput = $('#options input[type="checkbox"]');
   var padArea = $('#pad');
   var mdArea = $('#markdown');
 
-  var mdOptions = {
+  // Markdown options
+  var options = {
     tables: true,
     fencedCode: true,
     footnotes: true,
@@ -21,32 +29,40 @@ $(document).ready(function() {
     disableIndentedCode: true
   };
 
+  // Update option checkboxes
   var updateOptions = function() {
-    for (var option in mdOptions) {
-      $('#' + option).prop('checked', mdOptions[option]);
+    for (var option in options) {
+      $('#' + option).prop('checked', options[option]);
     }
   };
 
+  // ====================
+  // Socket.io client
+  // ====================
+
+  // On connecting to server
   socket.on('connect', function() {
-    updateOptions();
-    socket.emit('options', mdOptions);
+    updateOptions(); // Update option checkboxes
+    socket.emit('options', options); // Send options to server
   });
 
+  // On checkbox change
   optionsInput.change(function() {
-    for (var option in mdOptions) {
-      mdOptions[option] = $('#' + option).prop('checked');
+    // Update Markdown options
+    for (var option in options) {
+      options[option] = $('#' + option).prop('checked');
     }
-
-    socket.emit('options', mdOptions);
-    socket.emit('convert', padArea.val());
-    return false;
+    socket.emit('options', options); // Send Markdown options to server
+    socket.emit('convert', padArea.val()); // Send Markdown input to server
   });
 
+  // On new input
   padArea.on('input', function() {
-    socket.emit('convert', padArea.val());
+    socket.emit('convert', padArea.val()); // Send Markdown input to server
   });
 
-  socket.on('convert', function(html) {
-    mdArea.html(html);
+  // On recieving HTML output
+  socket.on('convert', function(data) {
+    mdArea.html(data); // Display HTML output
   });
 });
