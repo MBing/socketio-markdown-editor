@@ -52,23 +52,29 @@ var updateOptions = function(options) { // Update Hoedown instance with new opti
 // ====================
 // Configure
 // ====================
+
 app.use(express.static('public'));
 
 // ====================
 // Routes
 // ====================
+
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
 // ====================
-// Listen
+// Server
 // ====================
+
 http.listen(port, function() {
   console.log('server up');
 });
 
-// Socket.io listeners
+// ====================
+// Setup
+// ====================
+
 io.on('connection', function(socket) {
   console.log('user connected');
 
