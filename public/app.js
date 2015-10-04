@@ -37,7 +37,7 @@ $(document).ready(function() {
   };
 
   // ====================
-  // Socket.io client
+  // Socket
   // ====================
 
   // On connecting to server
