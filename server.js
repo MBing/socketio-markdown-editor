@@ -72,7 +72,7 @@ http.listen(port, function() {
 });
 
 // ====================
-// Setup
+// Socket
 // ====================
 
 io.on('connection', function(socket) {
